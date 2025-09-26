@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@import url(../root.css);
+
+:root {
+    /* --base-color: #11121a;
+    --line-clr: #42434a;
+    --hover-clr: #222533;
+    --text-clr: #e6e6ef;
+    --accent-clr: #5e63ff;
+    --secondary-text-clr: #b0b3c1; */
+
+    /* You can replace this with your own image URL */
+    --hero-image-url: url('../assets/monthly_notes/images/hero-img.jpg');
+    /* --max-w: 1100px; */
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+}
+
+/* CSS Reset (lightweight) */
+*,
+*::before,
+*::after {
+    box-sizing: border-box
+}
+
+html:focus-within {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0;
+    line-height: 1.6;
+    background: var(--base-color);
+    color: var(--text-clr);
+    
+}
+
+img {
+    max-width: 100%;
+    display: block
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.25;
+    margin: 0 0 .6rem
+}
+
+p {
+    margin: .2rem 0 1rem
+}
+
+::selection {
+    background: color-mix(in oklab, var(--accent-clr), white 25%);
+    color: #fff
+}
+
+/* App Shell */
+.site {
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto
+}
+
+/* Header / Hero */
+.hero {
+    position: relative;
+    isolation: isolate;
+    background-color: transparent;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--hero-image-url) center/cover no-repeat;
+    z-index: -2;
+    border-end-start-radius: 50px;
+    border-end-end-radius: 50px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .55), rgba(17, 18, 26, .85));
+    backdrop-filter: blur(.5px);
+    z-index: -1
+}
+
+.hero-inner {
+    max-width: var(--max-w);
+    margin-inline: auto;
+    padding: 72px 20px 48px;
+    display: grid;
+    gap: 16px
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700
+}
+
+.logo-hero {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: conic-gradient(from 180deg, var(--accent-clr), #7d82ff 75%, #3a3ef7);
+    /* box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .08), var(--shadow) */
+}
+
+.title {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    letter-spacing: .3px
+}
+
+
+.hero-copy {
+    display: grid;
+    gap: 10px
+}
+
+.hero h1 {
+    font-size: clamp(1rem, 4vw, 2.6rem)
+}
+
+.subtitle {
+    color: var(--secondary-text-clr);
+    max-width: 65ch
+}
+
+
+.chip {
+    padding: .3rem .65rem;
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 999px
+}
+
+/* Main Content */
+.main {
+    max-width: var(--max-w);
+    margin-inline: auto;
+    padding: 28px 0 80px;
+}
+
+.month {
+    border: 1px solid var(--line-clr);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, 0));
+    box-shadow: var(--shadow);
+    margin-bottom: 28px
+}
+
+.month-header {
+    position: sticky;
+    top: 0;
+    background: color-mix(in oklab, var(--base-color), black 8%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: end;
+    gap: 16px;
+    padding: 18px 18px;
+    border-bottom: 1px solid var(--line-clr);
+    backdrop-filter: blur(6px)
+}
+
+.month-header h2 {
+    font-size: clamp(1.2rem, 2vw, 1.4rem)
+}
+
+.month-header .count {
+    color: var(--secondary-text-clr)
+}
+
+.entries {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 14px;
+    padding: 1rem;
+}
+
+/* .entries {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+            padding: 16px;
+        } */
+
+@media (max-width: 900px) {
+    .entries {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .entries {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0.2rem;
+
+    }
+}
+
+
+.entry {
+    margin-block: 0.5rem;
+    grid-column: span 4;
+    border: 1px solid var(--line-clr);
+    border-radius: 14px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .03), transparent)
+}
+
+.entry:hover {
+    transform: translateY(-2px);
+    background: var(--hover-clr)
+}
+
+.entry .thumb {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    width: 100%;
+    height: auto
+}
+
+.entry .content {
+    padding: 12px 14px 16px
+}
+
+.entry .eyebrow {
+    font: 600 .8rem/1.2 system-ui;
+    color: var(--secondary-text-clr);
+    letter-spacing: .3px;
+    text-transform: uppercase
+}
+
+.entry h3 {
+    font-size: 1.02rem;
+    margin: .2rem 0 .4rem
+}
+
+.entry p {
+    color: var(--secondary-text-clr);
+    margin: 0 0 .8rem
+}
+
+.entry .tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap
+}
+
+.tag {
+    font-size: .82rem;
+    border: 1px dashed var(--line-clr);
+    padding: .28rem .55rem;
+    border-radius: 999px;
+    color: var(--secondary-text-clr)
+}
+
+.tag.accent {
+    border: 1px solid color-mix(in oklab, var(--accent-clr), white 10%);
+    color: var(--text-clr)
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important
+    }
+}

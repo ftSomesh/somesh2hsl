@@ -1,0 +1,7 @@
+.container {
+    padding: min(3em, 5%);
+}
+
+main {
+    padding: min(30px, 2%);
+}

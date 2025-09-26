@@ -1,0 +1,81 @@
+
+.gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery .img-box {
+    overflow: hidden;
+    width: 5rem;
+    height: 30em;
+    margin: 0.6rem;
+    border-radius: 1.5rem;
+    background-image: url(../assets/aesthetic_folder/somesh-icecream/somesh-cafe-icecream\ 1.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    opacity: 0.6;
+}
+
+.img-box:nth-child(2) {
+    background-image: url("../assets/aesthetic_folder/Somesh Kumar/mirror-selfie\ 01.png");
+}
+
+.img-box:nth-child(3) {
+    background-image: url("../assets/aesthetic_folder/Vanillllllaaa/Vanila-01.png");
+}
+
+.img-box:nth-child(4) {
+    background-image: url("../assets/aesthetic_folder/images/img4.png");
+}
+
+.img-box:nth-child(5) {
+    background-image: url("../assets/aesthetic_folder/images/img2.png");
+}
+
+
+.img-box h3 {
+    background: var(--text-clr);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-wrap: nowrap;
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    opacity: 0;
+    transition: bottom 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.img-box:hover {
+    opacity: 1;
+    width: 300px;
+    cursor: pointer;
+
+}
+
+.img-box:hover h3 {
+    font-size: clamp(0.5rem, 3vw, 1rem);
+    opacity: 1;
+    bottom: 25px;
+}
+
+@media(max-width: 500px) {
+    .img-box {
+        margin-inline: 0.2rem;
+        height: 15rem !important;
+        margin: 5px !important;
+    }
+
+    .img-box:hover {
+        width: 400px;
+    }
+}
+
+.gallery-professional > div > img {
+    object-fit: cover;
+    height: 100%;
+}

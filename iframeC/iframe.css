@@ -1,0 +1,251 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(../root.css);
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--base-clr);
+    color: #e2e8f0;
+    overflow-wrap: break-word;
+    text-wrap: wrap;
+    word-wrap: break-word;
+}
+.problem-wrap{
+    overflow-wrap: break-word;
+    text-wrap: wrap;
+    word-wrap: break-word;
+}
+a {
+    cursor: pointer;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #0ea5e9, #7e22ce);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    /* box-shadow: 0 10px 25px rgba(14, 165, 233, 0.2); */
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, #0ea5e9, #7e22ce);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.active::after {
+    width: 100%;
+}
+
+.md:timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    left: -7.5px;
+    top: 0;
+    background: linear-gradient(135deg, #0ea5e9, #7e22ce);
+}
+
+.skill-bar {
+    height: 8px;
+    border-radius: 4px;
+    background-color: #1e293b;
+}
+
+.skill-progress {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #0ea5e9, #7e22ce);
+    transition: width 1s ease-in-out;
+}
+
+.project-card {
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    /* box-shadow: 5px 5px 15px rgba(2, 6, 23, 0.5),
+                -5px -5px 15px rgba(30, 41, 59, 0.5); */
+}
+
+.contact-input {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    transition: all 0.3s ease;
+}
+
+.contact-input:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #0ea5e9, #7e22ce);
+    transition: all 0.3s ease;
+    margin-right: 5px;
+    margin-top: 0.25rem;
+
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    /* box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3); */
+}
+
+.social-icon {
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+}
+
+.about-img,
+.somesh-img {
+    margin-inline: auto;
+    height: 80%;
+    width: 80%;
+
+}
+
+.toast {
+    z-index: 999;
+    border-radius: 12px;
+    color: #0f172a;
+    position: fixed;
+    top: 80px;
+    right: 35px;
+    background-color: #fff;
+    padding: 1rem 2rem 1rem 1.2rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #0ea5e9;
+    overflow: hidden;
+
+    transform: translateX(calc(100% + 35px));
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.toast.active {
+
+    transform: translateX(0);
+}
+
+.toast .toast-content {
+    display: flex;
+    align-items: center;
+
+}
+
+
+.toast-content .message {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+}
+
+.toast-content .check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    background-color: #4070f4;
+}
+
+.message .text {
+    font-size: clamp(0.5rem, 3vw, 1rem);
+    font-weight: 400;
+    color: #666666;
+}
+
+.message .text.text-1 {
+    font-weight: 600;
+    color: #333;
+}
+
+.toast .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.toast .close:hover {
+    opacity: 1;
+}
+
+.toast .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #ddd;
+}
+
+.toast .progress::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #4070f4;
+    width: 100%;
+    height: 100%;
+}
+
+.progress.active::before {
+    animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+    100% {
+        right: 100%;
+    }
+    
+}
+
+/* .somesh-img-per, .about-img-per {
+            height: 80%;
+            width: 80%;
+        } */
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}

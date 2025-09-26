@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(../root.css);
+
+body {
+    background-color: var(--base-clr);
+    color: var(--text-clr);
+    margin: 0;
+    padding: 2rem;
+}
+
+html {
+    font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table.infobox {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    float: right;
+    clear: right;
+    background-color: var(--base-clr);
+    width: 300px;
+    border: 1px solid var(--line-clr);
+    border-collapse: collapse;
+}
+
+table.infobox caption {
+    background-color: inherit;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--line-clr);
+}
+
+table.infobox img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--line-clr);
+}
+
+table.infobox .section-heading {
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--hover-clr);
+    padding: 0.5rem;
+    border-top: 1px solid var(--line-clr);
+    border-bottom: 1px solid var(--line-clr);
+}
+
+table.infobox th,
+table.infobox td {
+    padding: 6px 10px;
+    vertical-align: top;
+    text-align: left;
+}
+
+table.infobox th {
+    font-weight: bold;
+    white-space: nowrap;
+    width: 35%;
+}
+
+table.infobox td {
+    width: 65%;
+}
+
+table.infobox .caption {
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 4px 8px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+section.contents {
+    text-align: justify;
+}
+
+main,
+footer {
+    margin-inline: auto;
+    max-width: 1000px;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 12px;
+}
+
+footer ul li {
+    line-height: 1.4;
+    display: inline-block;
+    padding: 0.5rem 0;
+}
+
+.social-media-handle li {
+    margin-right: 1rem;
+}
+
+.social-media-handle li a {
+    text-decoration: none;
+    color: var(--accent-clr);
+}
+
+.social-media-handle li a:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+
+@media (max-width: 500px) {
+    table.infobox {
+        float: none;
+        clear: right;
+        margin: auto;
+        width: 100%;
+    }
+
+    body {
+        padding: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,7 @@
+.logo-hero {
+    background: conic-gradient(from 180deg, #ffa500, #ffa500 75%, #f7403a);
+}
+
+:root {
+    --hero-image-url: url('../assets/ideas_&_experiments/images/ideas.jpg')
+}

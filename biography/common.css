@@ -1,0 +1,10 @@
+ h2.head {
+            display: inline-block;
+            margin-block: 1rem 0.5rem;
+            border-bottom: 2px solid var(--accent-clr);
+        }
+        .container {
+            p {
+                text-align: justify;
+            }
+        }
