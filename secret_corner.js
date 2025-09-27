@@ -3,7 +3,10 @@ const PIN = "9586"; // change this
 const pinBtn = document.getElementById('pin-btn');
 const pinInput = document.getElementById('pin-input');
 const pinScreen = document.getElementById('pin-screen');
-const toast = document.getElementById('toast');
+
+
+const toast = document.querySelector("#toast")
+
 const list = document.getElementById('list');
 
 let contacts = [];
@@ -39,14 +42,25 @@ function renderContacts(data) {
   });
 }
 
+
 // ===== PIN unlock =====
 pinBtn.addEventListener('click', () => {
   if (pinInput.value === PIN) {
-    pinScreen.style.display = 'none';
+    pinInput.style.color = "green";
+    setTimeout(() => {
+      pinScreen.style.display = 'none';
+    }, 1000);
   } else {
+
+    pinInput.setAttribute("disabled", "true")
+    pinInput.classList.toggle("red-color")
     toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 2000);
-    pinInput.value = '';
+    setTimeout(() => {
+      toast.classList.remove('show')
+      pinInput.value = '';
+      pinInput.classList.toggle("red-color")
+      pinInput.removeAttribute("disabled")
+    }, 2000);
   }
 });
 

@@ -146,14 +146,12 @@ a {
 }
 
 .toast.active {
-
     transform: translateX(0);
 }
 
 .toast .toast-content {
     display: flex;
     align-items: center;
-
 }
 
 
