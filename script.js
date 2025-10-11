@@ -1,4 +1,5 @@
 
+
 const main = document.querySelector("main")
 const toggleButton = document.getElementById("toggle-btn")
 const sidebar = document.getElementById("sidebar")
@@ -6,7 +7,7 @@ const dropdowns = document.getElementsByClassName("dropdown-btn")
 
 
 const spanActive = document.querySelector("#sidebar span.active")
-if(spanActive?.previousElementSibling || false){
+if (spanActive?.previousElementSibling || false) {
     spanActive.previousElementSibling.style.fill = '#5e63ff'
 }
 function toggleSidebar() {
@@ -47,4 +48,5 @@ toggleButton.addEventListener("click", () => toggleSidebar());
 [...dropdowns].forEach((dropdown) => {
     dropdown.addEventListener("click", () => toggleSubMenu(dropdown))
 })
+
 

@@ -1,5 +1,4 @@
-const PIN = "9586"; // change this
-
+const PIN = "OTU4Ng==";
 const pinBtn = document.getElementById('pin-btn');
 const pinInput = document.getElementById('pin-input');
 const pinScreen = document.getElementById('pin-screen');
@@ -14,13 +13,18 @@ let contacts = [];
 // ===== Load contacts from contacts.json =====
 async function loadContacts() {
   try {
-    const res = await fetch("./contacts.json"); // same folder as index.html
-    contacts = await res.json();
+    const res = await fetch("./contacts.json");
+    const { data } = await res.json();
+
+    const decoded = atob(data);
+    contacts = JSON.parse(decoded);
+    
     renderContacts(contacts);
   } catch (err) {
     console.error("Error loading contacts:", err);
   }
 }
+
 
 function renderContacts(data) {
   list.innerHTML = "";
@@ -45,7 +49,7 @@ function renderContacts(data) {
 
 // ===== PIN unlock =====
 pinBtn.addEventListener('click', () => {
-  if (pinInput.value === PIN) {
+  if (pinInput.value === atob(PIN)) {
     pinInput.style.color = "green";
     setTimeout(() => {
       pinScreen.style.display = 'none';
