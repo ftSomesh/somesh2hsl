@@ -46,6 +46,11 @@ a {
     color: inherit;
     text-decoration: none
 }
+a.nest-link {
+    color: var(--accent-clr);
+    text-decoration-line: underline;
+}
+
 
 h1,
 h2,
