@@ -236,18 +236,20 @@ p {
     aspect-ratio: 16/9;
     object-fit: cover;
     width: 100%;
-    height: auto
+    height: auto;
 }
 
 .entry .content {
-    padding: 12px 14px 16px
+    padding: 12px 14px 16px;
+    max-height: 300px;
+    overflow-y: scroll;
 }
 
 .entry .eyebrow {
     font: 600 .8rem/1.2 system-ui;
     color: var(--secondary-text-clr);
     letter-spacing: .3px;
-    text-transform: uppercase
+    text-transform: uppercase;
 }
 
 .entry h3 {
@@ -257,13 +259,13 @@ p {
 
 .entry p {
     color: var(--secondary-text-clr);
-    margin: 0 0 .8rem
+    margin: 0 0 .8rem;
 }
 
 .entry .tags {
     display: flex;
     gap: 8px;
-    flex-wrap: wrap
+    flex-wrap: wrap;
 }
 
 .tag {
