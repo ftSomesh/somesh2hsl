@@ -7,7 +7,7 @@
 
 .gallery .img-box {
     overflow: hidden;
-    width: 5rem;
+    width: 4rem;
     height: 30em;
     margin: 0.6rem;
     border-radius: 1.5rem;
@@ -52,7 +52,7 @@
 
 .img-box:hover {
     opacity: 1;
-    width: 300px;
+    width: min(50%, 300px);
     cursor: pointer;
 
 }
@@ -71,7 +71,7 @@
     }
 
     .img-box:hover {
-        width: 400px;
+        width: 350px;
     }
 }
 
