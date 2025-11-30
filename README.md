@@ -25,7 +25,7 @@ Users should be able to:
 - Navigate to a Gallery sections where i'll be posting some of my photos.
 
 ### Screenshots and Recording
-
+<!-- 
 <video width="320" height="240" controls autoplay>
   <source src="./assets/screenshotsandvideos/videos/Desktop-Design.mp4">
   Your browser does not support the video tag.
@@ -33,7 +33,7 @@ Users should be able to:
 <video width="320" height="240" controls autoplay>
   <source src="./assets/screenshotsandvideos/videos/Mobile-Design.mp4">
   Your browser does not support the video tag.
-</video>
+</video> -->
 
 #### Desktop Design
 
